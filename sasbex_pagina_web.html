@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SASBEX Asesores Empresariales: asesoría contable, tributaria, empresarial y servicios en tecnología de la información.">
+  <title>SASBEX | Asesores Empresariales</title>
+  <style>
+    :root{--navy:#102746;--blue:#1769aa;--gold:#d5ad55;--light:#f3f6fa;--ink:#243247;--muted:#64748b}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Arial,Helvetica,sans-serif;color:var(--ink);line-height:1.6;background:#fff}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1120px,92%);margin:auto}
+    header{background:var(--navy);color:white;position:sticky;top:0;z-index:10;box-shadow:0 3px 14px #06152a25}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 0}
+    .brand{font-size:1.8rem;font-weight:900;letter-spacing:2px;color:white}
+    .brand span{color:var(--gold)}
+    .brand small{display:block;font-size:.68rem;font-weight:600;letter-spacing:2px;color:#dce5ef}
+    nav{display:flex;gap:22px;align-items:center;font-size:.95rem}
+    nav a:hover{color:var(--gold)}
+    .btn{display:inline-block;background:var(--gold);color:#15243a;padding:12px 20px;border-radius:7px;font-weight:700;transition:.2s}
+    .btn:hover{transform:translateY(-2px);filter:brightness(1.04)}
+    .hero{background:linear-gradient(115deg,#102746f5,#1769aae8),radial-gradient(circle at 80% 20%,#d5ad55 0,transparent 28%);color:white;padding:88px 0 82px}
+    .hero-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:center}
+    .eyebrow{color:var(--gold);font-weight:800;text-transform:uppercase;letter-spacing:2px;font-size:.85rem}
+    h1{font-size:clamp(2.4rem,5vw,4.2rem);line-height:1.08;margin:14px 0 20px}
+    h1 span{color:var(--gold)}
+    .hero p{font-size:1.12rem;color:#e2eaf4;max-width:650px;margin-bottom:27px}
+    .hero-card{border:1px solid #ffffff40;background:#ffffff12;border-radius:18px;padding:28px;backdrop-filter:blur(4px)}
+    .hero-card .monogram{font-size:4.6rem;line-height:1;font-weight:900;letter-spacing:5px;color:white}
+    .hero-card .line{height:4px;background:var(--gold);width:95px;margin:18px 0}
+    .hero-card p{font-size:1rem;margin:0}
+    section{padding:72px 0}
+    .section-head{text-align:center;max-width:720px;margin:0 auto 38px}
+    .section-head .eyebrow{color:var(--blue)}
+    h2{font-size:clamp(1.9rem,3vw,2.7rem);color:var(--navy);line-height:1.2;margin:10px 0 14px}
+    .section-head p{color:var(--muted)}
+    .services{background:var(--light)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .card{background:white;padding:26px;border-radius:13px;border:1px solid #e2e8f0;box-shadow:0 8px 24px #10274608}
+    .icon{width:48px;height:48px;display:grid;place-items:center;border-radius:12px;background:#e8f1fb;color:var(--blue);font-size:1.5rem;margin-bottom:17px}
+    .card h3{color:var(--navy);margin-bottom:9px;font-size:1.15rem}
+    .card p{color:var(--muted);font-size:.96rem}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+    .about-panel{background:var(--navy);color:white;padding:34px;border-radius:16px}
+    .about-panel h3{font-size:1.5rem;margin-bottom:12px}
+    .about-panel p{color:#dce5ef}
+    .checks{list-style:none;margin-top:18px}
+    .checks li{margin:10px 0}
+    .checks li:before{content:"✓";color:var(--gold);font-weight:900;margin-right:10px}
+    .contact{background:#edf2f8}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
+    .contact-info,.contact-form{background:white;border-radius:14px;padding:28px;border:1px solid #dce4ee}
+    .contact-info h3,.contact-form h3{color:var(--navy);margin-bottom:18px}
+    .contact-item{margin:15px 0;color:var(--muted);overflow-wrap:anywhere}
+    .contact-item strong{display:block;color:var(--navy)}
+    label{display:block;font-weight:700;margin:12px 0 5px;color:var(--navy)}
+    input,textarea{width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:7px;font:inherit}
+    textarea{min-height:110px;resize:vertical}
+    .contact-form button{border:0;cursor:pointer;font:inherit;margin-top:15px}
+    .note{font-size:.83rem;color:var(--muted);margin-top:10px}
+    footer{background:#091a30;color:#dbe4ef;padding:25px 0}
+    .footer-row{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;font-size:.9rem}
+    .gold{color:var(--gold)}
+    @media(max-width:800px){.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}nav{gap:12px;flex-wrap:wrap;justify-content:flex-end}.hero{padding:65px 0}}
+    @media(max-width:560px){.nav{align-items:flex-start;flex-direction:column}.brand{font-size:1.55rem}nav{justify-content:flex-start;font-size:.88rem}.cards{grid-template-columns:1fr}section{padding:55px 0}.hero-card .monogram{font-size:3.6rem}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#inicio">SAS<span>BEX</span><small>ASESORES EMPRESARIALES</small></a>
+      <nav aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a><a href="#nosotros">Nosotros</a><a href="#servicios">Servicios</a><a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Asesoría para crecer con confianza</div>
+          <h1>Impulsamos tu negocio con <span>soluciones inteligentes.</span></h1>
+          <p>Te acompañamos con servicios contables, tributarios, empresariales y de tecnología de la información para que tomes mejores decisiones y te concentres en hacer crecer tu empresa.</p>
+          <a class="btn" href="#contacto">Solicitar información</a>
+        </div>
+        <div class="hero-card">
+          <div class="monogram">SASBEX</div>
+          <div class="line"></div>
+          <p><strong>Asesores empresariales</strong><br><span class="gold">Confianza que impulsa tu crecimiento</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="nosotros">
+      <div class="container about-grid">
+        <div>
+          <div class="eyebrow">Quiénes somos</div>
+          <h2>Un aliado estratégico para tu empresa</h2>
+          <p>SASBEX Asesores Empresariales brinda acompañamiento profesional a emprendedores, negocios y organizaciones. Trabajamos con responsabilidad, claridad y enfoque práctico para ayudarte a ordenar tus procesos y avanzar con seguridad.</p>
+          <ul class="checks">
+            <li>Atención cercana y orientada a tus necesidades.</li>
+            <li>Información clara para apoyar tus decisiones.</li>
+            <li>Soluciones integrales para la gestión empresarial.</li>
+          </ul>
+        </div>
+        <div class="about-panel">
+          <h3>Nuestro compromiso</h3>
+          <p>Convertirnos en un socio de confianza para tu crecimiento, ofreciendo orientación oportuna y soluciones que aporten valor a tu actividad empresarial.</p>
+          <div class="line"></div>
+          <p><span class="gold"><strong>Confianza · Compromiso · Crecimiento</strong></span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="servicios">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Qué hacemos</div>
+          <h2>Servicios profesionales</h2>
+          <p>Soluciones pensadas para acompañarte en las distintas etapas de tu negocio.</p>
+        </div>
+        <div class="cards">
+          <article class="card"><div class="icon">▤</div><h3>Asesoría contable</h3><p>Organización contable, registros, revisión de información y apoyo para mantener tus cuentas ordenadas.</p></article>
+          <article class="card"><div class="icon">₊</div><h3>Asesoría tributaria</h3><p>Orientación en obligaciones tributarias, declaraciones y cumplimiento de responsabilidades ante SUNAT.</p></article>
+          <article class="card"><div class="icon">◈</div><h3>Asesoría empresarial</h3><p>Apoyo en gestión administrativa, formalización y mejora de procesos para fortalecer tu negocio.</p></article>
+          <article class="card"><div class="icon">▣</div><h3>Servicios de TI</h3><p>Servicios en tecnología de la información, soporte y orientación para mejorar el uso de herramientas digitales.</p></article>
+          <article class="card"><div class="icon">▥</div><h3>Gestión administrativa</h3><p>Apoyo en documentación, organización de información y procedimientos administrativos.</p></article>
+          <article class="card"><div class="icon">↗</div><h3>Orientación para emprendedores</h3><p>Acompañamiento para ordenar tus ideas, planificar tareas y avanzar con una visión de crecimiento.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="contact">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Hablemos</div>
+          <h2>¿Listo para impulsar tu crecimiento?</h2>
+          <p>Escríbenos para conversar sobre las necesidades de tu negocio.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3>Información de contacto</h3>
+            <div class="contact-item"><strong>Empresa</strong>SASBEX — Asesores Empresariales</div>
+            <div class="contact-item"><strong>Representante</strong>Sanchez Ayala Ignacio</div>
+            <div class="contact-item"><strong>Dirección</strong>Jr. Sociego, Cda. 05</div>
+            <div class="contact-item"><strong>Correo electrónico</strong><a href="mailto:sasbexconsultoresyservicios@gmail.com">sasbexconsultoresyservicios@gmail.com</a></div>
+            <p class="note">Antes de publicar, verifica que el correo y la dirección estén escritos exactamente como deseas mostrarlos.</p>
+          </div>
+          <form class="contact-form" id="contactForm">
+            <h3>Envíanos una consulta</h3>
+            <label for="nombre">Nombre</label><input id="nombre" name="nombre" required placeholder="Tu nombre">
+            <label for="correo">Correo electrónico</label><input id="correo" name="correo" type="email" required placeholder="tucorreo@ejemplo.com">
+            <label for="mensaje">¿Cómo podemos ayudarte?</label><textarea id="mensaje" name="mensaje" required placeholder="Cuéntanos brevemente qué servicio necesitas"></textarea>
+            <button class="btn" type="submit">Preparar correo</button>
+            <p class="note">El botón abrirá tu aplicación de correo para que puedas revisar y enviar el mensaje.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div><strong>SAS<span class="gold">BEX</span></strong> · Asesores Empresariales</div>
+      <div>Confianza que impulsa tu crecimiento</div>
+      <div>© <span id="year"></span> SASBEX. Todos los derechos reservados.</div>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const nombre = document.getElementById('nombre').value.trim();
+      const correo = document.getElementById('correo').value.trim();
+      const mensaje = document.getElementById('mensaje').value.trim();
+      const subject = encodeURIComponent('Consulta desde la página web de SASBEX');
+      const body = encodeURIComponent('Nombre: '+nombre+'\\nCorreo: '+correo+'\\n\\nConsulta:\\n'+mensaje);
+      window.location.href = 'mailto:sasbexconsultoresyservicios@gmail.com?subject='+subject+'&body='+body;
+    });
+  </script>
+</body>
+</html>
